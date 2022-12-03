@@ -7,11 +7,9 @@ function App() {
 
   const [listItems, setListItems] = useState([])
 
-  const removeItems = (e) => {
-    const newList = listItems.filter()
-    setListItems(newList)
-
-    console.log(newList)
+  const removeItems = (index) => {
+    const newListItems = listItems.filter((_, i) => i !== index);
+    setListItems(newListItems)
   }
 
 
@@ -61,7 +59,7 @@ function App() {
           <div>
             <p className="text-center">Your order</p>
             {listItems.map((item, index) => {
-              return <div key={index} className="flex"><p className="text-xl">{item}</p><div><button onClick={removeItems} className="text-xs font-thin ml-4 text-gray-500">remove</button></div><p className="ml-auto mr-10">$14</p></div>
+              return <div key={index} className="flex"><p className="text-xl">{item}</p><div><button onClick={() => removeItems(index)} className="text-xs font-thin ml-4 text-gray-500">remove</button></div><p className="ml-auto mr-10">$14</p></div>
             })}
             <button className="bg-green-400 h-12 w-4/5 ml-10 mt-4 rounded text-center">Complete order</button>
           </div>
