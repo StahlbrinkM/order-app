@@ -16,9 +16,9 @@ function App() {
 
 
   return (
-    <div>
+    <div className="bg-gray-200 h-full">
       {/* ----- Container ----- */}
-      <div className='w-4/12 italic'>
+      <div className='w-4/12 italic flex-col m-auto bg-white'>
         {/* ----- Header -----*/}
         <div className='bg-[url("./images/bg-img.png")] h-32 bg-cover pl-10 pt-10'>
           <h1 className="text-white text-2xl">Jimmy's Diner</h1>
@@ -26,8 +26,8 @@ function App() {
         </div>
 
         {/* ----- Main Area ----- */}
-        <div>
-          <div className='my-7 flex'>
+        <div >
+          <div className='my-7 pb-5 m-auto flex justify-center px-2 w-11/12 border-b border-black'>
             <img src={PizzaIcon} alt='pizza icon' className="w-12"/>
             <div className="flex-column ml-4">
               <p className='text-xl'>Pizza</p>
@@ -36,7 +36,7 @@ function App() {
             </div>
             <button onClick={() => setListItems((prevItems) => [...prevItems, "Pizza"])} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16">+</button>
           </div>
-          <div className='my-7 flex'>
+          <div className='my-7 pb-5 m-auto flex justify-center px-2 w-11/12 border-b border-black'>
             <img src={HamburgerIcon} alt="hamburger icon" className="w-12 object-contain"/>
             <div className="flex-column ml-4">
               <p className='text-xl'>Hamburger</p>
@@ -45,7 +45,7 @@ function App() {
             </div>
             <button onClick={() => setListItems((prevItems) => [...prevItems, "Hamburger"])} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16">+</button>
           </div>
-          <div className='my-7 flex'>
+          <div className='my-5 pb-5 m-auto flex justify-center px-2 w-11/12 border-b border-black'>
             <img src={BeerIcon} alt='beer icon' className="w-12 object-contain"/>
             <div className="flex-column ml-4">
               <p className='text-xl'>Beer</p>
@@ -58,12 +58,12 @@ function App() {
         {/* ----- Main Area ----- */}
 
         {/* ----- Order list ----- */}
-        <div className="flex-col">
+        <div className="flex-col px-2">
             {listItems.length >= 1 ?
           <div>
             <p className="text-center">Your order</p>
             {listItems.map((item, index) => {
-              return <div key={index} className="flex"><p className="text-xl">{item}</p><div><button onClick={() => removeItems(index)} className="text-xs font-thin ml-4 text-gray-500">remove</button></div><p className="ml-auto mr-10">${item === "Pizza" ? 14 : 12}</p></div>
+              return <div key={index} className="flex px-8"><p className="text-xl">{item}</p><div><button onClick={() => removeItems(index)} className="text-xs font-thin ml-4 text-gray-500">remove</button></div><p className="ml-auto mr-6">${item === "Pizza" ? 14 : 12}</p></div>
             })}
             
             <button onClick={() => setIsVisable(prevVisable => !prevVisable)} className="bg-green-400 h-12 w-4/5 ml-10 mt-4 rounded text-center">Complete order</button>
@@ -74,7 +74,7 @@ function App() {
 
         {/* ----- Modal ----- */}
         {isVisable === true ? 
-        <div className="w-[25rem] h-96 fixed bg-white inset-x-6 inset-y-10 flex-col border border-black">
+        <div className="w-[25rem] h-96 fixed bg-white inset-x-6 inset-y-10 flex-col border border-black m-auto">
           <div className="justify-center align-center items-center pt-10">
             <p className="text-black text-xl ml-[7rem]">Enter your details</p>
             <input className="block ml-10 pl-4 mt-12 border border-black rounded h-12 w-4/5" type="text" placeholder="Enter your name"></input>
