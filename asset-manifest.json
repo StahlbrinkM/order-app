@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/order-app/static/css/main.56cc38db.css",
+    "main.js": "/order-app/static/js/main.88f4f4c9.js",
+    "static/media/hamburger.png": "/order-app/static/media/hamburger.1cdf4f9c07bc9ba561d7.png",
+    "static/media/bg-img.png": "/order-app/static/media/bg-img.5fb064aa3d40f30db403.png",
+    "static/media/pizza.png": "/order-app/static/media/pizza.e9e534b981271467eb47.png",
+    "index.html": "/order-app/index.html",
+    "main.56cc38db.css.map": "/order-app/static/css/main.56cc38db.css.map",
+    "main.88f4f4c9.js.map": "/order-app/static/js/main.88f4f4c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56cc38db.css",
+    "static/js/main.88f4f4c9.js"
+  ]
+}
