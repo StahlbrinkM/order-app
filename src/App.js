@@ -6,6 +6,7 @@ import { useState } from "react";
 function App() {
 
   const [listItems, setListItems] = useState([])
+  const [isVisable, setIsVisable] = useState(false)
 
   const removeItems = (index) => {
     const newListItems = listItems.filter((_, i) => i !== index);
@@ -13,15 +14,17 @@ function App() {
   }
 
 
+
   return (
     <div>
       {/* ----- Container ----- */}
       <div className='w-4/12 italic'>
         {/* ----- Header -----*/}
-        <div className='bg-black p-4'>
-          <h1 className="text-white">Jimmy's Diner</h1>
-          <h3 className="text-white">The best burgers and pizzas in town</h3>
+        <div className='bg-[url("./images/bg-img.png")] h-32 bg-cover pl-10 pt-10'>
+          <h1 className="text-white text-2xl">Jimmy's Diner</h1>
+          <h3 className="text-white text-xs">The best burgers and pizzas in town</h3>
         </div>
+
         {/* ----- Main Area ----- */}
         <div>
           <div className='my-7 flex'>
@@ -53,19 +56,39 @@ function App() {
           </div>
         </div>
         {/* ----- Main Area ----- */}
+
         {/* ----- Order list ----- */}
         <div className="flex-col">
             {listItems.length >= 1 ?
           <div>
             <p className="text-center">Your order</p>
             {listItems.map((item, index) => {
-              return <div key={index} className="flex"><p className="text-xl">{item}</p><div><button onClick={() => removeItems(index)} className="text-xs font-thin ml-4 text-gray-500">remove</button></div><p className="ml-auto mr-10">$14</p></div>
+              return <div key={index} className="flex"><p className="text-xl">{item}</p><div><button onClick={() => removeItems(index)} className="text-xs font-thin ml-4 text-gray-500">remove</button></div><p className="ml-auto mr-10">${item === "Pizza" ? 14 : 12}</p></div>
             })}
-            <button className="bg-green-400 h-12 w-4/5 ml-10 mt-4 rounded text-center">Complete order</button>
+            
+            <button onClick={() => setIsVisable(prevVisable => !prevVisable)} className="bg-green-400 h-12 w-4/5 ml-10 mt-4 rounded text-center">Complete order</button>
           </div>
             : ""}
         </div>
         {/* ----- Order list ----- */}
+
+        {/* ----- Modal ----- */}
+        {isVisable === true ? 
+        <div className="w-[25rem] h-96 fixed bg-white inset-x-6 inset-y-10 flex-col border border-black">
+          <div className="justify-center align-center items-center pt-10">
+            <p className="text-black text-xl ml-[7rem]">Enter your details</p>
+            <input className="block ml-10 pl-4 mt-12 border border-black rounded h-12 w-4/5" type="text" placeholder="Enter your name"></input>
+            <input className="block ml-10 pl-4 mt-2 border border-black rounded h-12 w-4/5" type="text" placeholder="Enter your card"></input>
+            <input className="block ml-10 pl-4 mt-2 border border-black rounded h-12 w-4/5" type="text" placeholder="Enter CVV"></input>
+          </div>
+
+          <button onClick={() => setIsVisable(prevVisable => !prevVisable)} className="bg-green-400 h-12 w-4/5 ml-10 mt-6 rounded text-center">Pay</button>
+
+
+        </div> 
+        : ""}
+        {/* ----- Modal ----- */}
+
       </div>
       {/* ----- Container ----- */}
     </div>
