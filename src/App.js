@@ -32,7 +32,7 @@ function App() {
 
 
   return (
-    <div className="bg-gray-200 h-auto">
+    <div className="bg-gray-200 min-h-screen">
       {/* ----- Container ----- */}
       <div className='w-4/12 italic flex-col m-auto bg-white'>
         {/* ----- Header -----*/}
