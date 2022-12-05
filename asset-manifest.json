@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/order-app/static/css/main.83d458cd.css",
-    "main.js": "/order-app/static/js/main.442bb7a6.js",
+    "main.css": "/order-app/static/css/main.c7542569.css",
+    "main.js": "/order-app/static/js/main.ea3021b5.js",
     "static/media/hamburger.png": "/order-app/static/media/hamburger.1cdf4f9c07bc9ba561d7.png",
     "static/media/bg-img.png": "/order-app/static/media/bg-img.5fb064aa3d40f30db403.png",
     "static/media/checkMark.png": "/order-app/static/media/checkMark.c6988b1a587a81e28721.png",
     "static/media/pizza.png": "/order-app/static/media/pizza.e9e534b981271467eb47.png",
     "index.html": "/order-app/index.html",
-    "main.83d458cd.css.map": "/order-app/static/css/main.83d458cd.css.map",
-    "main.442bb7a6.js.map": "/order-app/static/js/main.442bb7a6.js.map"
+    "main.c7542569.css.map": "/order-app/static/css/main.c7542569.css.map",
+    "main.ea3021b5.js.map": "/order-app/static/js/main.ea3021b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.83d458cd.css",
-    "static/js/main.442bb7a6.js"
+    "static/css/main.c7542569.css",
+    "static/js/main.ea3021b5.js"
   ]
 }
