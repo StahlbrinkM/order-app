@@ -36,7 +36,7 @@ function App() {
       {/* ----- Container ----- */}
       <div className='w-4/12 italic flex-col m-auto bg-white'>
         {/* ----- Header -----*/}
-        <div className='bg-[url("./images/bg-img.png")] h-32 bg-cover pl-10 pt-10'>
+        <div className='bg-[url("./images/bg-img.png")] h-32 bg-cover pl-10 pt-10 mt-10'>
           <h1 className="text-white text-2xl">Jimmy's Diner</h1>
           <h3 className="text-white text-xs">The best burgers and pizzas in town</h3>
         </div>
@@ -50,7 +50,7 @@ function App() {
               <p className='text-xs'>pepperoni ,mushroom, mozzarella</p>
               <p className='text-lg'>$14</p>
             </div>
-            <button onClick={() => addFoodData("Pizza", 14)} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16">+</button>
+            <button onClick={() => addFoodData("Pizza", 14)} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16 hover:cursor-pointer hover:bg-slate-200 focus:bg-slate-200">+</button>
           </div>
           <div className='my-7 pb-5 m-auto flex justify-center px-2 w-11/12 border-b border-black'>
             <img src={HamburgerIcon} alt="hamburger icon" className="w-12 object-contain"/>
@@ -59,16 +59,16 @@ function App() {
               <p className='text-xs'>beef, cheese, lettuce</p>
               <p className='text-lg'>$12</p>
             </div>
-            <button onClick={() => addFoodData("Hamburger", 12)} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16">+</button>
+            <button onClick={() => addFoodData("Hamburger", 12)} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16 hover:cursor-pointer hover:bg-slate-200 focus:bg-slate-200">+</button>
           </div>
-          <div className='my-5 pb-5 m-auto flex justify-center px-2 w-11/12 border-b border-black'>
+          <div className='my-5 pb-5 m-auto flex justify-center px-2 w-11/12'>
             <img src={BeerIcon} alt='beer icon' className="w-12 object-contain"/>
             <div className="flex-column ml-4">
               <p className='text-xl'>Beer</p>
               <p className='text-xs'>grain, hops, yeast, water</p>
               <p className='text-lg'>$12</p>
             </div>
-            <button onClick={() => addFoodData("Beer", 12)} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16">+</button>
+            <button onClick={() => addFoodData("Beer", 12)} className="ml-auto mr-6 border-2 border-black rounded-full w-16 h-16 hover:cursor-pointer hover:bg-slate-200 focus:bg-slate-200">+</button>
           </div>
         </div>
         {/* ----- Main Area ----- */}
@@ -77,10 +77,10 @@ function App() {
         <div className="flex-col px-2">
             {listItems.length >= 1 ?
           <div>
-            <p className="text-center">Your order</p>
+            <p className="text-center border-t underline border-black pt-10 pb-4 text-lg">Your order</p>
 
             {listItems.map((item, index) => {
-              return <div key={index} className="flex px-8">
+              return <div key={index} className="flex px-8 min-h-96">
                 <p className="text-xl">
                   {item}
                 </p>
@@ -101,7 +101,7 @@ function App() {
               <p className="ml-auto mr-6">${totalPrice.reduce((a,b) => a + b, 0)}</p>
             </div>
             
-            <button onClick={() => setIsVisable(prevVisable => !prevVisable)} className="bg-green-400 h-12 w-4/5 ml-10 mt-4 rounded text-center">Complete order</button>
+            <button onClick={() => setIsVisable(prevVisable => !prevVisable)} className="bg-green-400 h-12 w-4/5 ml-10 mt-4 rounded text-center mb-4 hover:bg-green-500 focus:bg-green-500 hover:cursor-pointer">Complete order</button>
           </div>
             : ""}
         </div>
@@ -117,7 +117,7 @@ function App() {
             <input className="block ml-10 pl-4 mt-2 border border-black rounded h-12 w-4/5" type="text" placeholder="Enter CVV"></input>
           </div>
 
-          <button onClick={() => changeModal()} className="bg-green-400 h-12 w-4/5 ml-10 mt-6 rounded text-center">Pay</button>
+          <button onClick={() => changeModal()} className="bg-green-400 h-12 w-4/5 ml-10 mt-6 rounded text-center hover:bg-green-500 focus:bg-green-500 hover:cursor-pointer">Pay</button>
 
 
         </div> 
